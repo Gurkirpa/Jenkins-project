@@ -12,6 +12,11 @@ pipeline {
         git branch: 'main', url: 'https://github.com/Gurkirpa/Jenkins-project.git'
       }
     }
+    stage('Clean Workspace') {
+      steps {
+          cleanWs() // Jenkins Workspace Cleanup Plugin
+       }
+    }
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
