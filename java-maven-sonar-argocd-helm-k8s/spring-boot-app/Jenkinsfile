@@ -1,4 +1,4 @@
-kpipeline {
+pipeline {
   agent {
     docker {
       image 'guraman/git-java-maven-docker-img:v3'
