@@ -1,4 +1,4 @@
-pipeline {
+kpipeline {
   agent {
     docker {
       image 'guraman/git-java-maven-docker-img:v3'
@@ -19,9 +19,9 @@ pipeline {
         sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && mvn clean package'
       }
     }
-    stage('Clean Workspace') {
-            steps {
-                cleanWs()
+    stage('Check') {
+        steps {
+           sh 'ls -la'
             }
         }
     stage('Static Code Analysis') {
